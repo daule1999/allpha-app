@@ -5,17 +5,16 @@ import ReduxWrapper from "../utils/ReduxWrapper";
 import { useFonts } from "expo-font";
 import BannerButton from "./BannerButton";
 
-function HomeBanner(props) {
+function HomeBanner({ app }) {
   const theme = useTheme();
   const [loaded] = useFonts({
     Lato: require("../assets/fonts/Lato/Lato-Bold.ttf"),
   });
-  const { myBalance = "" } = props;
+  const { myBalance = "" } = app;
 
   if (!loaded) {
     return null;
   }
-  console.log(props, "HomeBanner");
   return (
     <View
       style={{

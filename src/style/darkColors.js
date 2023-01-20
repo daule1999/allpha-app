@@ -8,6 +8,7 @@ export default {
   backgroundPrimary: "#6E6E6E",
   backgroundSecondary: "#404040",
   backdrop: "#282828",
+  green: "#12877F",
   secondaryPink: "#FDE5EE",
   card: "rgb(255, 255, 255)",
   text: "rgb(28, 28, 30)",

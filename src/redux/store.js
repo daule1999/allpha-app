@@ -81,7 +81,8 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = createStore(
-  persistedReducer
+  // persistedReducer
+  rootReducer
   // applyMiddleware(...middleWares)
 );
 let persistor = persistStore(store);

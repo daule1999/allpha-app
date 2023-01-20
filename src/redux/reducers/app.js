@@ -13,9 +13,11 @@ const intiialState = {
   thirdPartySite: "",
   disableBottom: false,
   myBalance: 2000,
+  enableBackWithBal: false,
 };
 
 export default function (state = intiialState, action) {
+  // console.log(state, "state");
   const { type, payload } = action;
   switch (type) {
     case CHANGE_THEME: {

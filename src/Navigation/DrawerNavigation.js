@@ -15,6 +15,7 @@ import { routes, screens } from "./RouteItems";
 import { Avatar, Badge, Text, useTheme } from "react-native-paper";
 import { useSelector } from "react-redux";
 import ReduxWrapper from "../utils/ReduxWrapper";
+import Balance from "../components/Balance";
 
 const Drawer = createDrawerNavigator();
 
@@ -49,7 +50,11 @@ const CustomDrawerContent = (props) => {
 
 const DrawerNavigator = ({ nav, app }) => {
   const theme = useTheme();
-  const { bannerScrolled = true } = app;
+  const {
+    bannerScrolled = false,
+    myBalance = "",
+    enableBackWithBal = false,
+  } = app;
   return (
     <Drawer.Navigator
       screenOptions={({ navigation }) => ({
@@ -74,15 +79,7 @@ const DrawerNavigator = ({ nav, app }) => {
         options={{
           title: "Home",
           headerTitle: () => {
-            return (
-              <>
-                {bannerScrolled && (
-                  <Text style={{ color: theme.colors.textPrimary }}>
-                    Text here
-                  </Text>
-                )}
-              </>
-            );
+            return <>{bannerScrolled && <Balance myBalance={myBalance} />}</>;
           },
           headerRight: () => (
             <View style={styles.headerRight}>
